@@ -15,7 +15,7 @@ class ShowMessageInteractor(val callback: Callback, val repository: Repository) 
 
     // Interactors communicate with outer layers through callbacks
     interface Callback {
-        fun showMessage(message: Message)
+        fun onSuccess(message: Message)
         fun onError(errorMessage: String)
     }
 
@@ -35,11 +35,12 @@ class ShowMessageInteractor(val callback: Callback, val repository: Repository) 
         }
 
         repository.saveMessage(message)
-        callback.showMessage(message)
+        callback.onSuccess(message)
     }
 
     private fun someVeryImportantCalculations(message: Message): Message {
         Thread.sleep(3000)
+        message.text += " with calculation result"
         return message
     }
 }
