@@ -22,6 +22,9 @@ class MainPresenter : MvpPresenter<MainView>(), ShowMessageInteractor.Callback {
         // This way Moxy will remember current state of the view and will restore it,
         // when the view is recreated.
         viewState.showProgress()
+
+        // Business logic is invoked by the presenter communicating
+        // with the corresponding interactor.
         showMessageInteractor.execute()
     }
 
