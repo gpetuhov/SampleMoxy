@@ -1,7 +1,8 @@
-package com.gpetuhov.android.samplemoxy
+package com.gpetuhov.android.samplemoxy.ui.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.gpetuhov.android.samplemoxy.R
 
 class MainActivity : AppCompatActivity() {
 
